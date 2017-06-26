@@ -32,5 +32,6 @@ Guide with how to install ros indigo on Jetson TX2
 ## Ros Build:  
 1. rosdep install --from-paths src --ignore-src --rosdistro indigo -y --skip-keys="python-opencv python-qt-bindings-webkit opencv libopencv-dev libopencv"  
 2. sudo apt install libpcl-dev  
+   you can use your own libpcl, but don't forget to export PCL_DIR env to the path where PCLConfig.cmake is, and every time you change the pcl version don't forget to clear the CMakeCache.txt  
 3. do the same as 5(1) told or you will got BOOST error in rviz  
-2. sudo ./src/catkin/bin/catkin_make_isolated --install -DCMAKE_BUILD_TYPE=Release --install-space /opt/ros/indigo -DCUDA_USE_STATIC_CUDA_RUNTIME=OFF  
+4. sudo ./src/catkin/bin/catkin_make_isolated --install -DCMAKE_BUILD_TYPE=Release --install-space /opt/ros/indigo -DCUDA_USE_STATIC_CUDA_RUNTIME=OFF  
